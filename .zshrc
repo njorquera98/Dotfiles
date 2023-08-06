@@ -23,3 +23,4 @@ unsetopt correct
 
 export EDITOR=nvim
 alias config='/usr/bin/git --git-dir=/home/joker/.cfg/ --work-tree=/home/joker'
+alias config='/usr/bin/git --git-dir=/home/njorquera98/.cfg/ --work-tree=/home/njorquera98'
