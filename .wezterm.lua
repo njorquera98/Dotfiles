@@ -1,8 +1,8 @@
 local wezterm = require "wezterm"
 
 return {
-  --font = wezterm.font "Hack",
-  font_size = 13,
+  font = wezterm.font "Hack Nerd Font",
+  font_size = 12,
   color_scheme = 'Monokai Remastered',
   keys = {
     {
