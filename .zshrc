@@ -23,3 +23,8 @@ unsetopt correct
 
 export EDITOR=nvim
 alias config='/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}'
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+source /usr/share/nvm/init-nvm.sh
