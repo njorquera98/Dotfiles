@@ -57,6 +57,14 @@ local plugins = {
     end,
   },
 
+  --monokai-pro
+  {
+    "loctvl842/monokai-pro.nvim",
+    config = function()
+    require("monokai-pro").setup()
+    end
+  },
+
   {
     "tpope/vim-surround",
     lazy = false
