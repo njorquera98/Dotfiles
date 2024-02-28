@@ -3,7 +3,7 @@
 ### Requirements
 
 - [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
-- [NvChad](https://github.com/NvChad/NvChad)
-- [WezTerm](https://wezfurlong.org/wezterm/)
+- [LazyVim](https://github.com/LazyVim/LazyVim)
+- [WezTerm](https://github.com/wez/wezterm)
 - [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
-- [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip)
+- [p10k](https://github.com/romkatv/powerlevel10k)
