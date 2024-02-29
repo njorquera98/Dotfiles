@@ -13,7 +13,7 @@ return {
 
 	require("neo-tree").setup({
 		window = {
-			position = "left",
+			position = "right",
 		},
 	}),
 }
