@@ -118,3 +118,5 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source ~/powerlevel10k/powerlevel10k.zsh-theme
