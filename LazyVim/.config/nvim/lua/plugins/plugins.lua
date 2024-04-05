@@ -11,9 +11,10 @@ return {
 		lazy = false,
 	},
 
-	require("neo-tree").setup({
-		window = {
-			position = "right",
+	{
+		"jesseduffield/lazygit",
+		requires = {
+			"nvim-lua/plenary.nvim",
 		},
-	}),
+	},
 }
