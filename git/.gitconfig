@@ -1,0 +1,7 @@
+[user]
+	name = njorquera98
+	email = njorquera98.dev@gmail.com
+[core]
+	editor = nvim
+[init]
+	defaultbranch = main
