@@ -359,7 +359,7 @@ for_window [class=TelegramDesktop] focus
 # For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
 # install picom package (yay -S picom)
 # start using default config 
-#exec_always --no-startup-id picom -b
+exec_always --no-startup-id picom -b --config ~/.config/picom.conf
 #
 # for custom config:
 #exec_always --no-startup-id picom --config  ~/.config/picom.conf
@@ -393,11 +393,11 @@ exec --no-startup-id dex --autostart --environment i3
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
-exec --no-startup-id ~/sscreenlayout/monitor.sh
+exec --no-startup-id ~/.screenlayout/display.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill /home/joker__98/Pictures/arch.jpg
+exec --no-startup-id sleep 1 && feh --bg-fill /home/joker__98/Pictures/arch1.jpg
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
