@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 return {
 	font = wezterm.font("Hack Nerd Font"),
 	font_size = 12,
-	color_scheme = "Monokai Soda",
+	color_scheme = "Monokai Remastered",
 	keys = {
 		{
 			key = "k",
@@ -14,7 +14,4 @@ return {
 	window_background_opacity = 0.95,
 	hide_tab_bar_if_only_one_tab = true,
 	scrollback_lines = 5000,
-
-	-- Iniciar Zellij con la sesión "Work"
-	--	default_prog = { "zellij", "attach", "Work" },
 }
