@@ -4,6 +4,7 @@ return {
 	font = wezterm.font("Hack Nerd Font"),
 	font_size = 12,
 	color_scheme = "Monokai Remastered",
+	window_close_confirmation = "NeverPrompt",
 	keys = {
 		{
 			key = "k",
