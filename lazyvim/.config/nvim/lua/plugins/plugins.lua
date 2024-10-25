@@ -1,6 +1,7 @@
 return {
 	{
-		"tanvirtin/monokai.nvim",
+		--"tanvirtin/monokai.nvim",
+		"njorquera98/monokai_remastered.nvim",
 		opts = {
 			colorscheme = "monokai",
 		},
