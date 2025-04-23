@@ -31,3 +31,6 @@ source <(ng completion script)
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
