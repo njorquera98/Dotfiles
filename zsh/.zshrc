@@ -34,3 +34,6 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+
+# Created by `pipx` on 2025-05-22 02:54:42
+export PATH="$PATH:/home/joker__98/.local/bin"

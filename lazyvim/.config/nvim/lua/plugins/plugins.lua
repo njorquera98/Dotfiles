@@ -16,8 +16,25 @@ return {
 		"rest-nvim/rest.nvim",
 		lazy = false,
 		keys = {
-			{ "<localleader>rr", "<cmd>Rest run<cr>", "Run request under the cursor" },
+			{ "<localleader>rr", "<cmd>Rest run<cr>", desc = "Run request under the cursor" },
 		},
+		config = function()
+			vim.g.rest_nvim = {
+				response = {
+					hooks = {
+						format = false, -- mantiene el formateo con gq (que usará jq)
+					},
+				},
+			}
+
+			-- Autocmd para que los buffers de resultados usen filetype json
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = "httpResult",
+				callback = function()
+					vim.bo.filetype = "json"
+				end,
+			})
+		end,
 	},
 
 	{
