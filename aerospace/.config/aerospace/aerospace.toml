@@ -1,0 +1,224 @@
+# AeroSpace config - https://nikitabobko.github.io/AeroSpace/guide
+
+start-at-login = true
+after-login-command = []
+after-startup-command = []
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+accordion-padding = 30
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+key-mapping.preset = 'qwerty'
+
+# El mouse salta al centro del monitor enfocado al cambiar de monitor
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+[gaps]
+inner.horizontal = 8
+inner.vertical = 8
+outer.left = 8
+outer.bottom = 8
+outer.top = 8
+outer.right = 8
+
+# ---------------------------------------------------------------
+# Monitores: la presentacion (P) va a la primera pantalla externa
+# (cualquiera que no sea la del Mac: Samsung, proyector, etc.).
+# Si solo esta la pantalla del Mac, queda en ella.
+# ---------------------------------------------------------------
+[workspace-to-monitor-force-assignment]
+P = '^(?!built-in).*$'
+
+# ---------------------------------------------------------------
+# Escritorios fijos por app
+# ---------------------------------------------------------------
+
+# Zen: ventanas abiertas en el workspace P (presentacion) se quedan ahi
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+if.workspace = 'P'
+run = 'move-node-to-workspace P'
+
+# Zen/Firefox: Picture-in-Picture flotante en el workspace actual
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+if.window-title-regex-substring = 'Picture-in-Picture'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+if.window-title-regex-substring = 'Picture-in-Picture'
+run = 'layout floating'
+
+# 1: WhatsApp (izquierda) + Discord (derecha)
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = 'move-node-to-workspace 1'
+
+# 2: Zen
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+run = 'move-node-to-workspace 2'
+
+# 3: Claude
+[[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop'
+run = 'move-node-to-workspace 3'
+
+# 4: Notion
+[[on-window-detected]]
+if.app-id = 'notion.id'
+run = 'move-node-to-workspace 4'
+
+# 5: Calendario
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = 'move-node-to-workspace 5'
+
+# 6: WezTerm
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = 'move-node-to-workspace 6'
+
+# 7: Firefox
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+run = 'move-node-to-workspace 7'
+
+# 8: Musica (Spotify / Apple Music)
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace 8'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Music'
+run = 'move-node-to-workspace 8'
+
+# Finder: flotante, se abre en el workspace actual
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+# Utilidades: flotantes en el workspace actual
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.calculator'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ActivityMonitor'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.archiveutility'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Passwords'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.FaceTime'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.philandro.anydesk'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.paloaltonetworks.GlobalProtect.client'
+run = 'layout floating'
+
+# Cualquier otra app (sin regla arriba): flotante en el workspace actual.
+# Debe ir AL FINAL: solo se aplica la primera regla que coincide.
+[[on-window-detected]]
+run = 'layout floating'
+
+# ---------------------------------------------------------------
+# Atajos
+# ---------------------------------------------------------------
+[mode.main.binding]
+
+# Layout
+alt-slash = 'layout tiles horizontal vertical'
+alt-comma = 'layout accordion horizontal vertical'
+alt-shift-space = 'layout floating tiling'
+alt-f = 'fullscreen'
+
+# Estilo Rectangle (ctrl+alt): maximizar y mitades
+ctrl-alt-enter = 'fullscreen'
+# Si la ventana esta flotante, la pasa al mosaico primero
+ctrl-alt-left = 'exec-and-forget /opt/homebrew/bin/aerospace layout tiling 2>/dev/null; /opt/homebrew/bin/aerospace move left; /opt/homebrew/bin/aerospace balance-sizes'
+ctrl-alt-right = 'exec-and-forget /opt/homebrew/bin/aerospace layout tiling 2>/dev/null; /opt/homebrew/bin/aerospace move right; /opt/homebrew/bin/aerospace balance-sizes'
+
+# Foco (h/j/k/l)
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+# Mover ventana
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+# Tamano
+alt-minus = 'resize smart -50'
+alt-equal = 'resize smart +50'
+
+# Ir a escritorio
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-p = 'workspace P'
+
+# Mover ventana a escritorio
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-p = 'move-node-to-workspace P'
+
+# Abrir / ir a apps (ctrl+alt+letra). Si ya esta abierta, salta a su workspace.
+ctrl-alt-t = 'exec-and-forget open -a WezTerm'
+ctrl-alt-b = 'exec-and-forget open -a Zen'
+ctrl-alt-c = 'exec-and-forget open -a Claude'
+ctrl-alt-n = 'exec-and-forget open -a Notion'
+ctrl-alt-w = 'exec-and-forget open -a WhatsApp'
+ctrl-alt-d = 'exec-and-forget open -a Discord'
+ctrl-alt-k = 'exec-and-forget open -a Calendar'
+ctrl-alt-f = 'exec-and-forget open -a Firefox'
+ctrl-alt-s = 'exec-and-forget open -a Spotify'
+ctrl-alt-m = 'exec-and-forget open -a Music'
+ctrl-alt-e = 'exec-and-forget open -a Finder'
+
+# Presentacion: ir al workspace P y abrir una ventana nueva de Zen ahi
+ctrl-alt-p = ['workspace P', 'exec-and-forget /Applications/Zen.app/Contents/MacOS/zen --new-window about:blank']
+
+# Volver al escritorio anterior
+alt-tab = 'workspace-back-and-forth'
+
+# Recargar config
+alt-shift-semicolon = 'reload-config'
