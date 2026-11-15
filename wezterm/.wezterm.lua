@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 return {
 	font = wezterm.font("Hack Nerd Font"),
-	font_size = 12,
+	font_size = 14,
 	color_scheme = "Monokai Remastered",
 	window_close_confirmation = "NeverPrompt",
 	keys = {
@@ -13,6 +13,7 @@ return {
 		},
 	},
 	window_background_opacity = 0.95,
+	macos_window_background_blur = 20,
 	hide_tab_bar_if_only_one_tab = true,
 	scrollback_lines = 5000,
 }
